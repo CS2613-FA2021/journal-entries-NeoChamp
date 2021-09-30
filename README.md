@@ -1,3 +1,3 @@
 # Welcome to Kevins Journal wiki
 
-[Python](http://github.com)
+[Python](https://github.com/CS2613-FA2021/journal-entries-NeoChamp/blob/main/python)

@@ -1,3 +1,3 @@
-# Journals
+# Welcome to Kevins Journal wiki
 
-Follow the steps detailed on D2L regarding journals.
+[Python](http://github.com)

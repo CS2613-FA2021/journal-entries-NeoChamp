@@ -1,1 +1,115 @@
-Kevins Python journal
+
+Question 1
+space = 15
+dog_list = []
+i = 0
+j = 0
+class Dog:
+	def __init__(self, name, weight, days):
+		self.name = name
+		self. weight = weight
+		self.days = days
+	def getInfo(self):
+		print(self.name, self.weight)
+	def getPrice(self):
+		num = self.weight/10 *19.99* ((self.days)/7) *10 *1.15
+		print('Price for your dog is : ',round(num,2))
+		
+class bigDog:
+	def __init__(self,name,weight, age, days, senior):
+		self.name = name
+		self.weight = weight
+		self.age = age
+		self.days = days
+		self.senior = senior
+	def getInfo(self):
+		print(self.name, self.weight, self.age, self.senior)
+	def getPrice(self):
+		num = self.weight/10 *24.99* ((self.days)/7) *12.5 *1.15
+		print('Price for your dog is : ',round(num,2))
+
+class bigOldDog:
+	def __init__(self,name,weight, age, days, senior):
+		self.name = name
+		self.weight = weight
+		self.age = age
+		self.days = days
+		self.senior = senior
+	def getInfo(self):
+		print(self.name, self.weight, self.age, self.senior)
+	def getPrice(self):
+		num = self.weight/10 *19.99* ((self.days)/7) *15 *1.15
+		print('Price for your dog is : ',round(num,2))
+		
+		
+print('Would you like to add a pet, A\n remove a pet,R\n print all pets,P\n or quit,X')
+option = input('Your choice : ')
+
+while option != 'x':
+	
+	if option == 'a':
+		name = input('Dog name :\n')
+		weight = int(input('Dog Weight :\n'))
+		days = int(input('How many days will your dog being staying here :\n'))
+		if space >=1:
+			if space >=3:
+				if weight > 10:
+					age = int(input('Dog age :\n'))
+					if age > 9:
+						senior = 'yes'
+						d = bigOldDog(name, weight, age, days, senior)
+						dog_list.append(d)
+						i = i+1
+						space = space -3
+						d.getPrice()
+	
+					else :
+						senior = 'no'
+						d = bigDog(name, weight, age, days,senior)
+						dog_list.append(d)
+						space = space -3
+						i = i+1
+						d.getPrice()
+					
+				else :
+					d = Dog(name, weight, days)
+					dog_list.append(d)
+					space = space -1
+					i = i+1
+					d.getPrice()
+				
+			else:
+				d = Dog(name, weight, days)
+				dog_list.append(d)
+				space = space -1
+				i = i+1
+				d.getPrice()
+				
+		else:
+			print('no room available')
+	
+	if option == 'r':
+		name = input('What is the name of the dog being removed ?:\n')
+		
+		k = 0
+		while k<len(dog_list):
+			if name == dog_list[k].name:
+				if dog_list[k].weight > 10:
+					space = space+3
+				else :
+					space = space+1
+				dog_list.pop(k)
+				k = k+1
+			else:
+				break
+	if option == 'p':
+		j = 0
+		print('Dog List :\n')
+		while j < len(dog_list):
+			
+			dog_list[j].getInfo()
+			j = j+1
+		
+	print('Would you like to add a pet, A\n remove a pet,R\n print all pets,P\n or quit,X')
+	option = input('Your choice : ')
+	j = i-1

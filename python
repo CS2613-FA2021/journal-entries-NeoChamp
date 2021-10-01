@@ -1,5 +1,6 @@
 
 Question 1
+
 space = 15
 dog_list = []
 i = 0
@@ -113,3 +114,81 @@ while option != 'x':
 	print('Would you like to add a pet, A\n remove a pet,R\n print all pets,P\n or quit,X')
 	option = input('Your choice : ')
 	j = i-1
+	
+	
+	
+	
+	
+	
+	
+Question 2
+
+from collections import defaultdict
+
+
+
+d = {}
+
+d = input('Enter paragraph\n')
+d = d.split()
+
+
+
+
+def replaceWord():
+	
+	word = input('Word to replace\n')
+	replace = input('Replacement word\n')
+	i = 0
+	for word in d:
+		if word == d[i]:
+			d[i] = replace
+
+def replaceWordAtIndex():
+	
+	index = int(input('What word index do you want to replace?:\n'))
+	replace = input('Replacement word\n')
+
+	temp = d[index+1]
+	d.pop(index)
+	d[index] = replace
+	d[index+1] = temp
+
+	
+		
+def printDict():
+	print(" ".join(d))
+	
+def printCommon():
+	temp = defaultdict(int)
+	for i in d:
+		for word in i.split():
+			temp[word] = 1
+	result = max(temp, key =temp.get)
+	print(result)
+	
+			
+def printPara():
+	print(d)
+
+print('Would you like to Replace a word, R\n remove a word at a given index,I\n print the dictionnary,D\n print the paragraph, P\n print the most common word, C\n or quit, x')
+option = input('Your choice : ')
+
+
+while option != 'x':
+	if option == 'r':
+		replaceWord()
+	if option =='d':
+		printDict()
+	if option == 'p':
+		printPara()
+	if option == 'c':
+		printCommon()
+	if option == 'i':
+		replaceWordAtIndex()
+
+
+	print('Would you like to Replace a word, R\n remove a word at a given index,I\n print the dictionnary,D\n print the paragraph, P\n print the most common word, C\n or quit, x')
+	option = input('Your choice : ')
+print('Thank you')
+

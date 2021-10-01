@@ -1,4 +1,4 @@
-# Welcome to Kevins Journal wiki
+# Welcome to Kevins Code Section
 
 [Python](https://github.com/CS2613-FA2021/journal-entries-NeoChamp/blob/main/python)
 
